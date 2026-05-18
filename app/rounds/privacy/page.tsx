@@ -3,21 +3,31 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Rounds — Privacy Policy',
   description:
-    'How Rounds, a physician billing app by matmul inc., collects, uses, and protects information.',
+    'How Rounds, a financial-management and productivity app for physicians by matmul inc., collects, uses, and protects information.',
 };
 
-const EFFECTIVE_DATE = 'May 17, 2026';
 const LAST_UPDATED = 'May 17, 2026';
 
-const labelStyle = { color: 'var(--text-dim)', flexShrink: 0, width: '5.5rem', textTransform: 'uppercase' as const, letterSpacing: '0.1em', fontSize: '12px' };
+const labelStyle = {
+  color: 'var(--text-dim)',
+  flexShrink: 0,
+  width: '5.5rem',
+  textTransform: 'uppercase' as const,
+  letterSpacing: '0.1em',
+  fontSize: '12px',
+};
 const valueStyle = { color: 'var(--text)', opacity: 0.7 };
 const bodyStyle = { color: 'var(--text)', opacity: 0.75, maxWidth: '40rem', fontSize: '15px', lineHeight: 1.9 };
 
-function Section({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
+function Section({ num, title, children }: { num: string; title: string; children: React.ReactNode }) {
   return (
-    <section className="page-pad pb-10 sm:pb-14" id={id}>
-      <div className="section-label" style={{ marginBottom: '1.5rem' }}>{title}</div>
-      <div className="flex flex-col gap-4" style={bodyStyle}>{children}</div>
+    <section className="page-pad pb-10 sm:pb-14">
+      <div className="section-label" style={{ marginBottom: '1.5rem' }}>
+        {num}. {title}
+      </div>
+      <div className="flex flex-col gap-4" style={bodyStyle}>
+        {children}
+      </div>
     </section>
   );
 }
@@ -29,7 +39,15 @@ export default function PrivacyPage() {
         <p style={{ fontSize: '14px', color: 'var(--text)', opacity: 0.5, marginBottom: '0.75rem' }}>
           Rounds — Privacy Policy
         </p>
-        <h1 style={{ fontSize: 'clamp(1.6rem, 3.2vw, 2.4rem)', lineHeight: 1.4, fontWeight: 700, color: 'var(--accent)', textWrap: 'balance' }}>
+        <h1
+          style={{
+            fontSize: 'clamp(1.6rem, 3.2vw, 2.4rem)',
+            lineHeight: 1.4,
+            fontWeight: 700,
+            color: 'var(--accent)',
+            textWrap: 'balance',
+          }}
+        >
           How we handle the information you share with Rounds.
         </h1>
       </section>
@@ -38,215 +56,207 @@ export default function PrivacyPage() {
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.75rem' }}>
           {[
             ['Operator', 'matmul inc. (Ontario, Canada)'],
-            ['Product', 'Rounds — iOS app for physician billing'],
-            ['Effective', EFFECTIVE_DATE],
-            ['Updated', LAST_UPDATED],
+            ['Product', 'Rounds — financial-management and productivity app for physicians'],
+            ['Last updated', LAST_UPDATED],
             ['Contact', <a key="c" href="mailto:hello@matmul.io" className="link-accent">hello@matmul.io</a>],
           ].map(([key, value], i) => (
             <div key={i} className="flex gap-3 sm:gap-6" style={{ lineHeight: 1.85 }}>
-              <span style={labelStyle} className="sm:w-28">{key}</span>
+              <span style={labelStyle} className="sm:w-28">
+                {key}
+              </span>
               <span style={valueStyle}>{value}</span>
             </div>
           ))}
         </div>
       </section>
 
-      <Section title="WHO THIS POLICY IS FOR">
+      <Section num="1" title="SCOPE">
         <p>
-          Rounds is a mobile billing tool used by physicians practising in Ontario, Canada. This Privacy
-          Policy describes how matmul inc. (&ldquo;matmul&rdquo;, &ldquo;we&rdquo;) collects, uses, shares, and protects information
-          about <em>physicians who use the Rounds app</em>. It is not a notice to the patients those
-          physicians treat.
+          This Privacy Policy describes how matmul inc. (&ldquo;matmul&rdquo;, &ldquo;we&rdquo;,
+          &ldquo;us&rdquo;) collects, uses, shares, and protects personal information of users
+          (&ldquo;you&rdquo;) of the Rounds iOS application. Rounds helps physicians track shifts,
+          reconcile end-of-shift billing sheets against the Ontario Schedule of Benefits, and
+          understand what each shift earned.
         </p>
         <p>
-          Physicians are accountable to their patients as <em>health information custodians</em> under
-          Ontario&apos;s <em>Personal Health Information Protection Act, 2004</em> (PHIPA). When a physician
-          uses Rounds to process patient billing information, matmul acts as the physician&apos;s
-          <em> agent and information manager</em> under PHIPA section 17, subject to the limitations and
-          obligations described below.
-        </p>
-      </Section>
-
-      <Section title="INFORMATION WE COLLECT">
-        <p>We collect only what we need to operate the app. Specifically:</p>
-        <p>
-          <strong>Account information.</strong> Email address used to sign in via one-time code. Your
-          name, profile photo URL (optional), CPSO registration number, hospital(s) where you bill, and
-          your monthly target number of shifts. All entered by you during onboarding or in profile
-          settings.
-        </p>
-        <p>
-          <strong>Shift content.</strong> Photographs of your end-of-shift OHIP code sheets that you
-          capture in the app, the encounters and OHIP billing codes extracted from those photographs,
-          the billed amounts the app computes, and any annotations or edits you apply. Patient initials
-          may appear on the source sheets you upload; the app does not store names or other
-          directly-identifying patient information.
-        </p>
-        <p>
-          <strong>Device and diagnostic information.</strong> Device model, OS version, app version,
-          locale, time zone, anonymous device identifier, and (if you allow notifications) your Expo
-          push notification token. Crash reports and performance traces from the app and our backend
-          servers, used to diagnose errors.
-        </p>
-        <p>
-          <strong>Usage analytics.</strong> Product-analytics events about how you interact with the
-          app (screens viewed, actions taken, feature usage) and session recordings on a 10% sample
-          rate (100% on sessions that encounter an error). These events do not include patient
-          information.
-        </p>
-        <p>
-          We do not collect biometric data, precise location, contacts, advertising identifiers, or
-          health information about you personally.
+          This policy is governed by the federal{' '}
+          <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA) and the
+          laws of the Province of Ontario.
         </p>
       </Section>
 
-      <Section title="HOW WE USE INFORMATION">
+      <Section num="2" title="INFORMATION WE COLLECT">
         <p>
-          <strong>To operate the service:</strong> sign you in, store your shifts and profile, extract
-          encounters from your photos using a vision model, price encounters against the published
-          Ontario Schedule of Benefits, and return summaries you can edit, save, and export.
+          <strong>Account.</strong> Your email address, used to receive a one-time sign-in code.
         </p>
         <p>
-          <strong>To improve reliability and quality:</strong> diagnose crashes, monitor performance,
-          and understand which features are useful. Vision-extraction errors are sometimes reviewed by
-          our engineers (without patient identifiers) to improve accuracy.
+          <strong>CPSO verification.</strong> You provide your CPSO registration number and last
+          name. We use them to look up your profile in the{' '}
+          <a className="link-accent" href="https://www.cpso.on.ca/" target="_blank" rel="noopener noreferrer">
+            public CPSO Doctor Search registry
+          </a>{' '}
+          and store the returned record so we can render your credentials and hospital privileges
+          without re-scraping. The record contains your name, specialties, registration history,
+          languages, hospital privileges, and any business locations or professional corporation
+          details the CPSO publishes about you. We do not edit or augment the record.
         </p>
         <p>
-          <strong>To communicate with you:</strong> deliver push notifications you have opted into
-          (e.g. &ldquo;your shift summary is ready&rdquo;) and respond to support requests.
+          <strong>Profile preferences.</strong> The subset of your CPSO-listed hospitals where you
+          actually bill, the hospital you currently bill from, and your monthly target number of
+          shifts. All set by you in the app.
         </p>
         <p>
-          We do <em>not</em> use your information to train third-party AI models. We do <em>not</em>{' '}
-          sell or rent personal information. We do <em>not</em> display advertising.
-        </p>
-      </Section>
-
-      <Section title="THIRD-PARTY PROCESSORS">
-        <p>
-          We rely on the following service providers, each contractually bound to process information
-          only on our instructions. Information shared with each is limited to what the named function
-          requires.
-        </p>
-        <p>
-          <strong>Supabase</strong> (PostgreSQL hosting + authentication, ca-central-1 / Montréal).
-          Stores your account, profile, shifts, device tokens, and uploaded sheets.
+          <strong>Shift content.</strong> Photographs of your end-of-shift billing sheets, OHIP
+          billing codes our model extracts from those photographs, the billed amounts the app
+          computes against the Ontario Schedule of Benefits, and any annotations or edits you
+          apply. Our model is configured to extract only OHIP billing codes (format{' '}
+          <code>[A-Z]NNN</code>) and a positional row label if visible (e.g. &ldquo;Pt 3&rdquo;);
+          it does not extract free-form text, names, dates, or identifiers, and we do not store
+          those as structured data. The source photographs themselves are stored as you captured
+          them — if you wrote initials, names, or other identifiers on the sheet, those visual
+          marks remain in the photo until you delete the shift.
         </p>
         <p>
-          <strong>Anthropic</strong> (Claude vision model, hosted in the United States). Processes
-          uploaded photographs to extract encounters and codes. Anthropic states it does not train its
-          models on API content. Information is transient — Anthropic does not durably store the
-          photographs we send.
+          <strong>Device and push.</strong> Device model, OS version, app version, locale, time
+          zone, and a stable per-device identifier issued by your operating system. If you allow
+          notifications, the Expo push token issued to your device.
         </p>
         <p>
-          <strong>Google Cloud Platform</strong> (Cloud Run + Secret Manager, northamerica-northeast1 /
-          Montréal). Hosts our backend service.
+          <strong>Diagnostics and analytics.</strong> Crash reports, performance traces, and
+          product-analytics events (screens viewed, features used). Session recordings at a 10%
+          baseline sample rate, 100% on sessions that encounter an error. These streams do not
+          include the content of your uploaded photographs.
         </p>
         <p>
-          <strong>PostHog</strong> (product analytics + session replay, United States data residency).
-          Receives usage events and replays. No patient information is sent.
-        </p>
-        <p>
-          <strong>Sentry</strong> (error and performance monitoring, United States). Receives crash
-          reports, stack traces, and request metadata. No patient information is sent.
-        </p>
-        <p>
-          <strong>Pydantic Logfire</strong> (server-side observability, United States). Receives
-          backend traces and structured logs.
-        </p>
-        <p>
-          <strong>Expo</strong> (push notification delivery, United States). Receives your push token
-          and the title/body/payload of any push we send. Push titles and bodies are generic; specific
-          content is loaded only after you open the app.
+          We do not collect biometric data, precise location, contacts, or advertising identifiers.
         </p>
       </Section>
 
-      <Section title="WHERE INFORMATION IS STORED">
+      <Section num="3" title="HOW WE USE INFORMATION">
         <p>
-          Your account, profile, shifts, and uploaded images are stored in Supabase&apos;s Montréal
-          (ca-central-1) region. Backend services run in Google Cloud&apos;s Montréal
-          (northamerica-northeast1) region. Both keep your primary data in Canada.
+          We use your information to operate the service (sign you in, store your shifts and
+          preferences, extract codes from sheet photos, price them against the Ontario Schedule of
+          Benefits, return summaries you can edit and save), to diagnose crashes and monitor
+          performance, and to deliver push notifications you opt into.
         </p>
         <p>
-          Diagnostic and analytics data (PostHog, Sentry, Logfire, Expo) is stored in the United
-          States, in accordance with each provider&apos;s data-processing terms. These services receive no
-          patient information.
+          Today, notifications are limited to welcome messages and occasional product updates
+          (release notes, new features). We will update this policy before sending any
+          shift-related, billing-related, or other operational notifications.
+        </p>
+        <p>
+          We do not use your information to train third-party AI models. We do not sell or rent
+          personal information. We do not display advertising.
         </p>
       </Section>
 
-      <Section title="HOW LONG WE KEEP INFORMATION">
+      <Section num="4" title="HOW WE SHARE INFORMATION">
         <p>
-          We retain your account and shifts for as long as your account remains active. You can request
-          deletion at any time by writing to hello@matmul.io, and we will action the request within 30
-          days. After deletion, anonymous aggregate counts of usage may remain in our analytics
+          We share information only with service providers that help us deliver the app —
+          including hosting and database providers, application monitoring and error-tracking
+          services, an AI vision provider that extracts billing codes from your sheet photographs,
+          a push-notification delivery service, and your authentication provider. Some of these
+          providers process data in the United States. Each is contractually bound to{' '}
+          <strong>
+            provide the same or equal protection of user data as stated in this policy
+          </strong>{' '}
+          and to process information only on our instructions.
+        </p>
+        <p>
+          We will disclose information when required by law or to enforce our agreements, protect
+          our rights, or respond to lawful requests from regulators or law enforcement.
+        </p>
+        <p>
+          We do not share your information with parties unrelated to operating Rounds.
+        </p>
+      </Section>
+
+      <Section num="5" title="STORAGE, RETENTION, AND DELETION">
+        <p>
+          Your account, profile, shifts, and uploaded photographs are stored in Canada
+          (Montréal). Backend services run in Canada (Montréal). Diagnostic and analytics signals
+          are processed by service providers in the United States.
+        </p>
+        <p>
+          We retain information for as long as your account is active. To delete a specific shift
+          (including its source photographs), or to delete your account and all associated
+          information, email{' '}
+          <a className="link-accent" href="mailto:hello@matmul.io">hello@matmul.io</a>; we will
+          action the request within 30 days. In-app deletion is on our roadmap. Database backups
+          containing your information are retained for 30 days after the deletion is actioned and
+          then permanently purged.
+        </p>
+        <p>
+          After deletion, anonymous, non-identifiable usage counts may remain in our analytics
           systems indefinitely.
         </p>
+      </Section>
+
+      <Section num="6" title="YOUR RIGHTS">
         <p>
-          Backups of our database are retained for 30 days after deletion before being permanently
-          purged.
+          You have the right to <strong>access</strong> the personal information we hold about
+          you, to <strong>correct</strong> inaccurate information (most fields are editable
+          directly in the app), to <strong>delete</strong> your account and information (see
+          Section 5), and to <strong>withdraw consent</strong> for non-essential processing such
+          as analytics and push notifications using your device settings or by contacting us.
+        </p>
+        <p>
+          If you believe we have not handled your information appropriately, you can complain to
+          our Privacy Officer (Section 11) or to the Office of the Privacy Commissioner of Canada
+          at <a className="link-accent" href="https://www.priv.gc.ca/">priv.gc.ca</a>.
         </p>
       </Section>
 
-      <Section title="YOUR RIGHTS">
-        <p>You have the right to:</p>
+      <Section num="7" title="SECURITY">
         <p>
-          <strong>Access</strong> the personal information we hold about you, and to receive a copy in
-          a portable format.
+          We use industry-standard safeguards: TLS for all network traffic, row-level access
+          controls in our database, encrypted storage at rest, strict service-account isolation,
+          and secrets managed in a dedicated key-management service (never embedded in source
+          code or logs). Access by matmul personnel is limited to authorized employees on a
+          need-to-know basis.
         </p>
         <p>
-          <strong>Correct</strong> information that is inaccurate. Most fields are editable directly in
-          the app.
-        </p>
-        <p>
-          <strong>Delete</strong> your account and the information associated with it. The Profile
-          screen includes an in-app account deletion option; you can also email hello@matmul.io.
-        </p>
-        <p>
-          <strong>Withdraw consent</strong> for non-essential processing (analytics, notifications).
-          Settings in the app and your device let you toggle these.
-        </p>
-        <p>
-          If you believe we have not handled your information appropriately, you can complain to the
-          Office of the Information and Privacy Commissioner of Ontario (IPC) at{' '}
-          <a className="link-accent" href="https://www.ipc.on.ca/">ipc.on.ca</a>.
+          No system is perfectly secure. If a breach of security safeguards occurs that creates a
+          real risk of significant harm to you, we will notify you and the relevant privacy
+          commissioner as required by law.
         </p>
       </Section>
 
-      <Section title="SECURITY">
+      <Section num="8" title="AUTOMATED PROCESSING">
         <p>
-          We use industry-standard safeguards: TLS for all network traffic, row-level access controls
-          in our database, encrypted storage at rest, and strict service-account isolation. Application
-          and infrastructure secrets are managed in Google Cloud Secret Manager and never embedded in
-          source code or logs.
-        </p>
-        <p>
-          No system is perfectly secure. If we ever experience a privacy breach that affects your
-          information, we will notify you and, where required, the IPC under PHIPA.
+          Rounds uses an AI vision model to extract OHIP billing codes from photographs of your
+          end-of-shift sheets. The model produces a structured list of codes and a computed total;
+          it does <em>not</em> make decisions on your behalf — you review and edit the result
+          before saving.
         </p>
       </Section>
 
-      <Section title="CHILDREN">
+      <Section num="9" title="CHILDREN">
         <p>
-          Rounds is a tool for licensed physicians. We do not knowingly collect information from anyone
-          under the age of 18. If you believe a minor has provided us information, please contact
-          hello@matmul.io and we will delete it.
+          Rounds is a tool for licensed physicians. We do not knowingly collect information from
+          anyone under the age of 18. If you believe a minor has provided us information, please
+          contact us and we will delete it.
         </p>
       </Section>
 
-      <Section title="CHANGES TO THIS POLICY">
+      <Section num="10" title="CHANGES TO THIS POLICY">
         <p>
-          We may update this policy from time to time. When we make material changes, we will notify
-          you in the app, by email, or both, and update the &ldquo;Updated&rdquo; date at the top of this page.
+          We may update this policy from time to time. When we make material changes, we will
+          notify you in the app, by email, or both, and update the &ldquo;Last updated&rdquo; date
+          at the top of this page.
         </p>
       </Section>
 
-      <Section title="CONTACT">
+      <Section num="11" title="PRIVACY OFFICER">
         <p>
-          Questions, requests, or complaints regarding this policy or your information:{' '}
-          <a className="link-accent" href="mailto:hello@matmul.io">hello@matmul.io</a>.
+          Questions, requests, or complaints regarding this policy or your information:
         </p>
-        <p style={{ fontSize: '13px', color: 'var(--text-dim)' }}>
-          matmul inc. is a Canadian corporation. This policy is governed by the laws of the Province of
-          Ontario and the federal laws of Canada applicable therein.
+        <p>
+          <strong>Marcel Anis, Privacy Officer</strong>
+          <br />
+          matmul inc.
+          <br />
+          <a className="link-accent" href="mailto:hello@matmul.io">hello@matmul.io</a>
         </p>
       </Section>
     </>

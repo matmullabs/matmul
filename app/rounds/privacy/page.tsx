@@ -41,7 +41,7 @@ export default function PrivacyPage() {
             ['Product', 'Rounds — iOS app for physician billing'],
             ['Effective', EFFECTIVE_DATE],
             ['Updated', LAST_UPDATED],
-            ['Contact', <a key="c" href="mailto:info@matmul.io" className="link-accent">info@matmul.io</a>],
+            ['Contact', <a key="c" href="mailto:hello@matmul.io" className="link-accent">hello@matmul.io</a>],
           ].map(([key, value], i) => (
             <div key={i} className="flex gap-3 sm:gap-6" style={{ lineHeight: 1.85 }}>
               <span style={labelStyle} className="sm:w-28">{key}</span>
@@ -176,7 +176,7 @@ export default function PrivacyPage() {
       <Section title="HOW LONG WE KEEP INFORMATION">
         <p>
           We retain your account and shifts for as long as your account remains active. You can request
-          deletion at any time by writing to info@matmul.io, and we will action the request within 30
+          deletion at any time by writing to hello@matmul.io, and we will action the request within 30
           days. After deletion, anonymous aggregate counts of usage may remain in our analytics
           systems indefinitely.
         </p>
@@ -198,7 +198,7 @@ export default function PrivacyPage() {
         </p>
         <p>
           <strong>Delete</strong> your account and the information associated with it. The Profile
-          screen includes an in-app account deletion option; you can also email info@matmul.io.
+          screen includes an in-app account deletion option; you can also email hello@matmul.io.
         </p>
         <p>
           <strong>Withdraw consent</strong> for non-essential processing (analytics, notifications).
@@ -228,7 +228,7 @@ export default function PrivacyPage() {
         <p>
           Rounds is a tool for licensed physicians. We do not knowingly collect information from anyone
           under the age of 18. If you believe a minor has provided us information, please contact
-          info@matmul.io and we will delete it.
+          hello@matmul.io and we will delete it.
         </p>
       </Section>
 
@@ -242,7 +242,7 @@ export default function PrivacyPage() {
       <Section title="CONTACT">
         <p>
           Questions, requests, or complaints regarding this policy or your information:{' '}
-          <a className="link-accent" href="mailto:info@matmul.io">info@matmul.io</a>.
+          <a className="link-accent" href="mailto:hello@matmul.io">hello@matmul.io</a>.
         </p>
         <p style={{ fontSize: '13px', color: 'var(--text-dim)' }}>
           matmul inc. is a Canadian corporation. This policy is governed by the laws of the Province of

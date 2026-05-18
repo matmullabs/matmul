@@ -33,7 +33,7 @@ export default function SupportPage() {
       <section className="page-pad reveal reveal-d2 pb-10 sm:pb-16" style={{ fontSize: '14px' }}>
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.75rem' }}>
           {[
-            ['Email', <a key="e" href="mailto:info@matmul.io" className="link-accent">info@matmul.io</a>],
+            ['Email', <a key="e" href="mailto:hello@matmul.io" className="link-accent">hello@matmul.io</a>],
             ['Response', 'Usually within one business day. Often faster.'],
             ['Hours', 'Monday–Friday, 9am–6pm Eastern (Toronto)'],
             ['Privacy', <a key="p" href="/rounds/privacy" className="link-accent">/rounds/privacy</a>],
@@ -88,7 +88,7 @@ export default function SupportPage() {
         </p>
         <p>
           <strong>Account deletion.</strong> Use the Delete Account button in Profile, or email
-          info@matmul.io. We will action the request within 30 days; backups are purged 30 days later.
+          hello@matmul.io. We will action the request within 30 days; backups are purged 30 days later.
         </p>
       </Section>
 

@@ -87,8 +87,9 @@ export default function SupportPage() {
           schedules update periodically and we may have caught a stale entry.
         </p>
         <p>
-          <strong>Account deletion.</strong> Use the Delete Account button in Profile, or email
-          hello@matmul.io. We will action the request within 30 days; backups are purged 30 days later.
+          <strong>Account deletion.</strong> Email hello@matmul.io. We will action the request
+          within 30 days; backups are purged 30 days later. An in-app deletion option is on the
+          roadmap.
         </p>
       </Section>
 

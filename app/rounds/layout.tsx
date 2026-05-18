@@ -20,12 +20,19 @@ export default function RoundsLayout({ children }: { children: React.ReactNode }
               </div>
               <span style={{ fontSize: '18px', letterSpacing: '0.06em' }}>matmul <span className="labs-glow">labs</span></span>
             </Link>
-            <nav
+            <Link
+              href="/rounds"
               className="hidden sm:block"
-              style={{ fontSize: '12px', letterSpacing: '0.2em', color: 'var(--text-mid)', textTransform: 'uppercase' as const }}
+              style={{
+                fontSize: '12px',
+                letterSpacing: '0.2em',
+                color: 'var(--text-mid)',
+                textTransform: 'uppercase' as const,
+                textDecoration: 'none',
+              }}
             >
               Rounds
-            </nav>
+            </Link>
           </div>
         </header>
 
